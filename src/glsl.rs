@@ -12,7 +12,7 @@ Given this struct:
     doc = r##"
 ```rust
 use mint::{ColumnMatrix4, Vector3};
-use crevice::glsl::GlslStruct;
+use crevice_notan::glsl::GlslStruct;
 
 #[derive(GlslStruct)]
 struct SpotLight {
@@ -36,7 +36,7 @@ struct SpotLight {
 ```
 */
 
-pub use crevice_derive::GlslStruct;
+pub use crevice_notan_derive::GlslStruct;
 
 /// Trait for types that have a GLSL equivalent. Useful for generating GLSL code
 /// from Rust structs.

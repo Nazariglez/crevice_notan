@@ -17,4 +17,4 @@ pub use self::traits::*;
 #[cfg(feature = "std")]
 pub use self::writer::*;
 
-pub use crevice_derive::AsStd140;
+pub use crevice_notan_derive::AsStd140;

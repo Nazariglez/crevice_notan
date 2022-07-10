@@ -15,12 +15,12 @@ fn test_round_trip_primitive<T>(_value: T) {}
 #[macro_use]
 mod util;
 
-use crevice::std140::AsStd140;
-use crevice::std430::AsStd430;
+use crevice_notan::std140::AsStd140;
+use crevice_notan::std430::AsStd430;
 use mint::{ColumnMatrix2, ColumnMatrix3, ColumnMatrix4, Vector2, Vector3, Vector4};
 
 #[cfg(feature = "wgpu-validation")]
-use crevice::glsl::GlslStruct;
+use crevice_notan::glsl::GlslStruct;
 
 #[test]
 fn two_f32() {

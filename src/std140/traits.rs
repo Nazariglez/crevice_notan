@@ -50,7 +50,7 @@ uniform CAMERA {
 ```
 
 ```no_run
-use crevice::std140::AsStd140;
+use crevice_notan::std140::AsStd140;
 
 #[derive(AsStd140)]
 struct CameraUniform {

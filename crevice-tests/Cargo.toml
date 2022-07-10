@@ -1,16 +1,17 @@
 [package]
-name = "crevice-tests"
+name = "crevice_notan-tests"
 version = "0.1.0"
 edition = "2018"
 
 [features]
 default = ["std"]
-std = ["crevice/std"]
+std = ["crevice_notan/std"]
 wgpu-validation = ["std", "wgpu", "naga", "futures"]
 
 [dependencies]
-crevice = { path = "..", default-features = false }
-crevice-derive = { path = "../crevice-derive", features = ["debug-methods"] }
+crevice_notan = { path = "..", default-features = false }
+crevice_notan-derive = { path = "../crevice-derive", features = ["debug-methods"] }
+notan = { path = "../../nae" }
 
 anyhow = "1.0.44"
 bytemuck = "1.7.2"

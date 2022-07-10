@@ -3,13 +3,13 @@ macro_rules! print_std140 {
     ($type:ty) => {
         println!(
             "{}",
-            <$type as crevice::std140::AsStd140>::Output::debug_metrics()
+            <$type as crevice_notan::std140::AsStd140>::Output::debug_metrics()
         );
         println!();
         println!();
         println!(
             "{}",
-            <$type as crevice::std140::AsStd140>::Output::debug_definitions()
+            <$type as crevice_notan::std140::AsStd140>::Output::debug_definitions()
         );
     };
 }
@@ -19,13 +19,13 @@ macro_rules! print_std430 {
     ($type:ty) => {
         println!(
             "{}",
-            <$type as crevice::std430::AsStd430>::Output::debug_metrics()
+            <$type as crevice_notan::std430::AsStd430>::Output::debug_metrics()
         );
         println!();
         println!();
         println!(
             "{}",
-            <$type as crevice::std430::AsStd430>::Output::debug_definitions()
+            <$type as crevice_notan::std430::AsStd430>::Output::debug_definitions()
         );
     };
 }
@@ -35,7 +35,7 @@ macro_rules! assert_std140 {
     ((size = $size:literal, align = $align:literal) $struct:ident {
         $( $field:ident: $offset:literal, )*
     }) => {{
-        type Target = <$struct as crevice::std140::AsStd140>::Output;
+        type Target = <$struct as crevice_notan::std140::AsStd140>::Output;
 
         let mut fail = false;
 
@@ -52,7 +52,7 @@ macro_rules! assert_std140 {
             );
         }
 
-        let actual_alignment = <Target as crevice::std140::Std140>::ALIGNMENT;
+        let actual_alignment = <Target as crevice_notan::std140::Std140>::ALIGNMENT;
         if actual_alignment != $align {
             fail = true;
             println!(
@@ -91,7 +91,7 @@ macro_rules! assert_std430 {
     ((size = $size:literal, align = $align:literal) $struct:ident {
         $( $field:ident: $offset:literal, )*
     }) => {{
-        type Target = <$struct as crevice::std430::AsStd430>::Output;
+        type Target = <$struct as crevice_notan::std430::AsStd430>::Output;
 
         let mut fail = false;
 
@@ -108,7 +108,7 @@ macro_rules! assert_std430 {
             );
         }
 
-        let actual_alignment = <Target as crevice::std430::Std430>::ALIGNMENT;
+        let actual_alignment = <Target as crevice_notan::std430::Std430>::ALIGNMENT;
         if actual_alignment != $align {
             fail = true;
             println!(

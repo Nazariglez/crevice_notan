@@ -1,5 +1,7 @@
 # Crevice
 
+## Fork of `crevice` made to be used internally from `notan` because derive macros cannot be reexported.
+
 [![GitHub CI Status](https://github.com/LPGhatguy/crevice/workflows/CI/badge.svg)](https://github.com/LPGhatguy/crevice/actions)
 [![crevice on crates.io](https://img.shields.io/crates/v/crevice.svg)](https://crates.io/crates/crevice)
 [![crevice docs](https://img.shields.io/badge/docs-docs.rs-orange.svg)](https://docs.rs/crevice)

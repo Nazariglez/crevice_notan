@@ -25,7 +25,7 @@ buffer FROBS {
 ```
 
 ```
-use crevice::std140::{self, AsStd140};
+use crevice_notan::std140::{self, AsStd140};
 
 #[derive(AsStd140)]
 struct Frob {

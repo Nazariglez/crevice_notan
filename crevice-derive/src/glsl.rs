@@ -12,8 +12,8 @@ pub fn emit(input: DeriveInput) -> TokenStream {
         Data::Enum(_) | Data::Union(_) => panic!("Only structs are supported"),
     };
 
-    let base_trait_path: Path = parse_quote!(::crevice::glsl::Glsl);
-    let struct_trait_path: Path = parse_quote!(::crevice::glsl::GlslStruct);
+    let base_trait_path: Path = parse_quote!(::notan::graphics::crevice::glsl::Glsl);
+    let struct_trait_path: Path = parse_quote!(::notan::graphics::crevice::glsl::GlslStruct);
 
     let name = input.ident;
     let name_str = Literal::string(&name.to_string());
@@ -25,8 +25,8 @@ pub fn emit(input: DeriveInput) -> TokenStream {
         let field_name_str = Literal::string(&field.ident.as_ref().unwrap().to_string());
 
         quote! {
-            ::crevice::glsl::GlslField {
-                ty: <#field_ty as ::crevice::glsl::Glsl>::NAME,
+            ::notan::graphics::crevice::glsl::GlslField {
+                ty: <#field_ty as ::notan::graphics::crevice::glsl::Glsl>::NAME,
                 name: #field_name_str,
             }
         }
@@ -38,7 +38,7 @@ pub fn emit(input: DeriveInput) -> TokenStream {
         }
 
         unsafe impl #impl_generics #struct_trait_path for #name #ty_generics #where_clause {
-            const FIELDS: &'static [::crevice::glsl::GlslField] = &[
+            const FIELDS: &'static [::notan::graphics::crevice::glsl::GlslField] = &[
                 #( #glsl_fields, )*
             ];
         }

@@ -49,7 +49,7 @@ uniform MAIN {
 ```
 
 ```rust
-use crevice::std140::AsStd140;
+use crevice_notan::std140::AsStd140;
 
 #[derive(AsStd140)]
 struct MainUniform {
@@ -97,7 +97,7 @@ buffer POINT_LIGHTS {
     feature = "std",
     doc = r##"
 ```rust
-use crevice::std140::{self, AsStd140};
+use crevice_notan::std140::{self, AsStd140};
 
 #[derive(AsStd140)]
 struct PointLight {

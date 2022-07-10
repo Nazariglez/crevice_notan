@@ -1,13 +1,13 @@
 [package]
-name = "crevice"
+name = "crevice_notan"
 description = "Create GLSL-compatible versions of structs with explicitly-initialized padding"
 version = "0.11.0"
 rust-version = "1.58.0"
 edition = "2021"
 authors = ["Lucien Greathouse <me@lpghatguy.com>"]
 documentation = "https://docs.rs/crevice"
-homepage = "https://github.com/LPGhatguy/crevice"
-repository = "https://github.com/LPGhatguy/crevice"
+homepage = "https://github.com/Nazariglez/crevice_notan"
+repository = "https://github.com/Nazariglez/crevice_notan"
 readme = "README.md"
 keywords = ["glsl", "std140", "std430"]
 license = "MIT OR Apache-2.0"
@@ -25,7 +25,7 @@ members = [".", "crevice-derive", "crevice-tests"]
 default-members = [".", "crevice-derive", "crevice-tests"]
 
 [dependencies]
-crevice-derive = { version = "0.10.0", path = "crevice-derive" }
+crevice_notan-derive = { version = "0.10.0", path = "crevice-derive" }
 
 bytemuck = "1.9.1"
 mint = "0.5.9"
