@@ -45,6 +45,7 @@ let buffer = create_buffer_with_size(sizer.len());
 # assert_eq!(sizer.len(), 32);
 ```
 */
+#[derive(Default)]
 pub struct Sizer {
     offset: usize,
 }
@@ -52,7 +53,7 @@ pub struct Sizer {
 impl Sizer {
     /// Create a new `Sizer`.
     pub fn new() -> Self {
-        Self { offset: 0 }
+        Default::default()
     }
 
     /// Add a type's necessary padding and size to the `Sizer`. Returns the
@@ -77,5 +78,10 @@ impl Sizer {
     /// the `Sizer`.
     pub fn len(&self) -> usize {
         self.offset
+    }
+
+    /// Returns if the bytes requires are 0
+    pub fn is_empty(&self) -> bool {
+        self.len() == 0
     }
 }

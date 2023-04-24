@@ -40,6 +40,7 @@ pub use crevice_notan_derive::GlslStruct;
 
 /// Trait for types that have a GLSL equivalent. Useful for generating GLSL code
 /// from Rust structs.
+#[allow(clippy::missing_safety_doc)]
 pub unsafe trait Glsl {
     /// The name of this type in GLSL, like `vec2` or `mat4`.
     const NAME: &'static str;
@@ -58,6 +59,7 @@ pub struct GlslField {
 ///
 /// This trait should not generally be implemented by hand, but can be derived.
 #[cfg(feature = "std")]
+#[allow(clippy::missing_safety_doc)]
 pub unsafe trait GlslStruct: Glsl {
     /// The fields contained in this struct.
     const FIELDS: &'static [GlslField];

@@ -71,6 +71,7 @@ let camera_std140 = camera.as_std140();
 write_to_gpu_buffer(camera_std140.as_bytes());
 ```
 */
+#[allow(clippy::missing_safety_doc)]
 pub trait AsStd140 {
     /// The `std140` version of this value.
     type Output: Std140;
